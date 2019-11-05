@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="VolkanGünay, Volkan, Günay, blog, website">
+    <meta name="description" content="VolkanGünay'ın kişisel web sayfasına hoşgeldiniz.">
+    <meta name="google-site-verification" content="7E45qA6biTZCu2iADfdRCDZcTM-zZRwdk43n7unZrbQ" />
+    <title>Anasayfa | vgunay.com</title>
+    <link rel="stylesheet" href="CSS/flexiblegs-css.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="Images/vgiconsmall.jpg">
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <ul class="wrap">
+        <div class="col xl-2-12"></div>
+
+        <div class="col xl-8-12">
+            <li class="title">vgunay</li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCvadxnYS2i5YX_7uG444CtA/videos?view_as=subscriber" target="_blank"
+                    class="notification">
+                    Youtube
+                    <div class="badge"></div>
+                </a>
+            </li>
+            <li><a href="https://discord.gg/M7hJrGE" target="_blank">Discord</a></li>
+            <li class="right"><a href="About/index.html" style="padding-right:0px;">Hakkımda</a></li>
+        </div>
+
+        <div class="col xl-2-12"></div>
+    </ul>
+
+    <!-- Twitch Embed -->
+    <div class="wrap xl-center" style="padding-top:30px;padding-bottom:30px;">
+        <div id="player" class="col xl-8-12"></div>
+    </div>
+
+    <!-- Hakkımda -->
+    <div class="wrap xl-center about">
+
+        <div class="col xl-8-12">
+            <div class="about-title">
+                Hakkımda
+            </div> <br>
+
+            <div class="about-content">
+                Merhaba, ben Volkan. 29 Nisan 2000 tarihinde Dünya'ya geldim. Küçüklüğümden bu yana bilgisayar ile iç
+                içe büyüdüm.
+                Yaklaşık 14-15 yaşımdan beri kodlama ile uğraşıyorum. İlk başlarda kendi
+                oyun sunucularımın pluginlerini editlemekle başladım. Sonrasında kendimi web alanında geliştirdim.
+                Şuanda front-end developer olarak freelancer takılıyorum. Ek olarak yazılım ve oyun yayınları
+                yapıyorum.
+                <br> <br>
+
+                <a href="About/index.html" target="_blank">Devamını Oku</a>
+                <i class="fa fa-angle-double-right" style="color:#E81C;position:relative;top:0.5px;"></i>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Youtube -->
+    <div class="wrap xl-center youtube">
+        <div class="col xl-8-12">
+            <img src="Images/youtube_logo.png" alt="Resim Bulunamadı." width="150" style="padding-top:20px;padding-bottom:20px;">
+            <br>
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <iframe class="latestVideoEmbed" vnum='0' cid="UCvadxnYS2i5YX_7uG444CtA" width="560" height="315"
+                frameborder="1" allowfullscreen></iframe>
+
+            <div style="padding-bottom:20px;"></div>
+        </div>
+    </div>
+
+
+    <!-- Twitter -->
+    <div class="wrap xl-center twitter">
+        <div class="col xl-8-12">
+
+            <div class="twitter-icon">
+                <i class="fa fa-twitter" aria-hidden="true" style="font-size:30px;color:white;"></i>
+                <a href="https://twitter.com/devdarfy" target="_blank" class="twitter-link">@vgunaydev</a>
+            </div>
+
+            <a class="twitter-timeline" data-lang="en" data-width="360" data-height="500" data-theme="dark"
+                data-link-color="#E81C4F" href="https://twitter.com/devdarfy?ref_src=twsrc%5Etfw">Tweets by
+                devdarfy</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div style="padding-bottom:20px;"></div>
+        </div>
+    </div>
+
+    <div class="wrap footer">
+        <div class="col xl-1-12"></div>
+        <div class="col xl-1-12"></div>
+        <div class="col xl-4-12 xl-left">Copyright 2018 by <b style="color:white;">VolkanGunay</b> | Tüm Hakları
+            Saklıdır.</div>
+        <div class="col xl-5-12 xl-center">made by unknown</div>
+        <div class="col xl-1-12"></div>
+    </div>
+
+    <script src="http://player.twitch.tv/js/embed/v1.js"></script>
+
+    <script type="text/javascript">
+        var options = {
+            width: 1280,
+            height: 720,
+            channel: "volkangunay",
+            autoplay: false,
+        };
+        var player = new Twitch.Player("player", options);
+        player.setVolume(0.5);
+    </script>
+
+    <script>
+        var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+        function loadVideo(iframe) {
+            $.getJSON(reqURL + iframe.getAttribute('cid'),
+                function (data) {
+                    var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+                    console.log(videoNumber);
+                    var link = data.items[videoNumber].link;
+                    id = link.substr(link.indexOf("=") + 1);
+                    iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1");
+                }
+            );
+        }
+        var iframes = document.getElementsByClassName('latestVideoEmbed');
+        for (var i = 0, len = iframes.length; i < len; i++) {
+            loadVideo(iframes[i]);
+        }
+    </script>
+
+</body>
+
+</html>

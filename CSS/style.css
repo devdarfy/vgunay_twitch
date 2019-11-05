@@ -1,0 +1,97 @@
+@font-face {
+  font-family: "helvetica";
+  src: url("../Font/HelveticaNeueLTPro-Bd.otf");
+  src: url("../Font/HelveticaNeueLTPro-Lt.otf");
+  src: url("../Font/HelveticaNeueLTPro-Md.otf");
+  src: url("../Font/HelveticaNeueLTPro-Roman.otf");
+  src: url("../Font/HelveticaNeueLTPro-Th.otf");
+  src: url("../Font/NeueBold.otf"); }
+body {
+  font-family: "helvetica";
+  margin: 0;
+  background-color: #D8D8D8; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #151515; }
+
+li {
+  float: left; }
+  li.title {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    padding-left: 0px;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: sans-serif; }
+  li.right {
+    float: right; }
+  li a {
+    display: block;
+    color: #A1A1A1;
+    text-align: center;
+    padding: 26px 10px;
+    text-decoration: none;
+    font-size: 20px; }
+
+.notification {
+  position: relative;
+  display: inline-block;
+  border-radius: 2px; }
+  .notification .badge {
+    position: absolute;
+    top: 25px;
+    right: 3px;
+    padding: 5px 5px;
+    border-radius: 50%;
+    background-color: red; }
+
+.about {
+  background-color: #232323; }
+  .about .about-title {
+    font-size: 40px;
+    color: white;
+    font-weight: bolder;
+    font-family: "helvetica";
+    padding-top: 20px; }
+  .about .about-content {
+    font-size: 19px;
+    padding-bottom: 20px;
+    color: #A1A1A1;
+    line-height: 25px; }
+    .about .about-content a {
+      text-decoration: none;
+      color: #E81C;
+      font-size: 17px; }
+      .about .about-content a:hover {
+        text-decoration: underline; }
+
+.youtube {
+  background-color: #151515; }
+
+.twitter {
+  background-color: #232323; }
+
+.twitter-icon {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: underline; }
+
+.twitter-link {
+  color: #E81C;
+  font-size: 17px;
+  text-decoration: underline; }
+
+.footer {
+  color: #A1A1A1;
+  background-color: #151515;
+  line-height: 60px;
+  font-family: sans-serif; }
+
+/*# sourceMappingURL=style.css.map */
